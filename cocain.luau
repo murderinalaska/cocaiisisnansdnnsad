@@ -1344,10 +1344,10 @@ local DEFAULTS = {
 	legitTriggerStill = false, 
 	silentHitboxes = { Head = true, Body = true }, 
 	silentPrefer = "Head",
-	silentVisibleHitbox = true,
-	teamCheck = true,
+	silentVisibleHitbox = false,
+	teamCheck = false,
 	crosshair = false, 
-	showFov = true,
+	showFov = false,
 	
 	
 	
@@ -1357,30 +1357,30 @@ local DEFAULTS = {
 	
 	
 	
-	silentFovFallback = true,
+	silentFovFallback = false,
 	fovLinked = false, 
 	silentHitChance = 100, 
 	silentWallbang = false, 
 	silentWallbangDist = 4, 
-	antiUnder = true, 
+	antiUnder = false, 
 	antiUnderDist = 8,
 	silentOnlyFiring = false,
-	silentSpoofServer = true,
-	silentRaycastLayer = true,
+	silentSpoofServer = false,
+	silentRaycastLayer = false,
 	silentSettleMs = 100,
-	settleAuto = true, 
+	settleAuto = false, 
 	silentSettleGateShots = false, 
 	targetPriority = "Closest", 
 	stickyAim = false, 
 	targetSwitchMs = 300, 
-	threatPriority = true,
-	deadTargetGuard = true,
-	resolver = true,
-	resolverBodyOnAA = true,
-	resolverWarp = true, 
+	threatPriority = false,
+	deadTargetGuard = false,
+	resolver = false,
+	resolverBodyOnAA = false,
+	resolverWarp = false, 
 	
 	magicHeight = 30,
-	magicJitter = true, 
+	magicJitter = false, 
 	magicJitterRadius = 3.5, 
 	magicJitterHz = 4, 
 	magicWiggle = 1, 
@@ -1399,7 +1399,7 @@ local DEFAULTS = {
 	autoShootAimMode = "Off", 
 	autoShootAim = false, 
 	autoShootAdsRelease = 0.4, 
-	noSpreadStraighten = true, 
+	noSpreadStraighten = false, 
 	fireMethod = "Auto", 
 	
 	
@@ -1419,22 +1419,22 @@ local DEFAULTS = {
 	leadMode = "Auto", 
 	leadMs = 100, 
 	leadLearnedMs = -1, 
-	shotsRecord = true, 
-	shotsLog = true, 
-	shotsExport = true, 
+	shotsRecord = false, 
+	shotsLog = false, 
+	shotsExport = false, 
 	logDetail = "Normal", 
-	roundFile = true, 
+	roundFile = false, 
 	
 	
-	unsafeMode = true,
-	unsafeAccepted = true, 
+	unsafeMode = false,
+	unsafeAccepted = false, 
 	unsafeFakeLag = false,
 	unsafeFakeLagChokeMs = 180, 
 	unsafeFakeLagEveryMs = 600, 
-	unsafeFakeLagOnlyWhenTargeted = true, 
+	unsafeFakeLagOnlyWhenTargeted = false, 
 	unsafePingBoost = false, 
 	unsafePingBoostMs = 150,
-	unsafeShowNet = true, 
+	unsafeShowNet = false, 
 	autoPeek = false,
 	autoPeekKey = "",
 	autoPeekDistance = 10,
@@ -1448,18 +1448,18 @@ local DEFAULTS = {
 	
 	
 	
-	rapidThrottle = true, 
+	rapidThrottle = false, 
 	
 	
 	rapidGhostRounds = false,
-	rapidAdaptive = true, 
+	rapidAdaptive = false, 
 	rapidFloor = {},
 	rapidFloorSafe = {}, 
 	
 	
 	
-	spreadClaimAim = true, 
-	spreadStillShot = true, 
+	spreadClaimAim = false, 
+	spreadStillShot = false, 
 	spreadMode = "Auto", 
 	spreadLearned = {}, 
 	
@@ -1469,7 +1469,7 @@ local DEFAULTS = {
 	rapidMeleeServer = 0.3, 
 	rapidFloorMelee = {},
 	
-	meleeRage = true,
+	meleeRage = false,
 	meleeRageRange = 80, 
 	meleeMode = "Auto", 
 	meleeOverrides = {}, 
@@ -1479,20 +1479,20 @@ local DEFAULTS = {
 	meleeOrbitRadius = 1, 
 	meleeSettlePad = 30, 
 	meleeHeavyHold = 0.12, 
-	meleeFaceOnSwing = true, 
-	meleePredict = true, 
+	meleeFaceOnSwing = false, 
+	meleePredict = false, 
 	
 	
 	
-	defenseHide = true,
+	defenseHide = false,
 	defenseMode = "Auto", 
 	defenseMinCooldown = 0.15, 
 	defenseMaxHide = 3, 
 	defenseOnlyWhenThreat = false, 
-	defenseAlways = true, 
-	defenseVoidSpam = true, 
+	defenseAlways = false, 
+	defenseVoidSpam = false, 
 	defenseHopHz = 3,
-	defensePinCamera = true, 
+	defensePinCamera = false, 
 	
 	
 	
@@ -1501,39 +1501,39 @@ local DEFAULTS = {
 	voidSpamDist = 10000000, 
 	voidSpamSpot = "Auto", 
 	
-	parkCsync = true,
+	parkCsync = false,
 	parkMinDist = 10000000, 
 	parkMaxDist = 1000000000,
 	parkAwayJitter = 40, 
-	parkHopEveryFrame = true, 
-	parkFallenGuard = true, 
+	parkHopEveryFrame = false, 
+	parkFallenGuard = false, 
 	translocOffset = -4, 
 	translocClear = 2, 
 	translocMaxBudget = 1, 
-	translocBait = true, 
+	translocBait = false, 
 	translocBaitDepth = 0.35, 
-	antiTransloc = true, 
+	antiTransloc = false, 
 	voidSpamHide = 1.5, 
 	voidSpamBack = 0.4, 
-	voidSpamFireBack = true, 
+	voidSpamFireBack = false, 
 	voidSpamMoveBack = false, 
-	voidSpamUnder = true, 
+	voidSpamUnder = false, 
 	voidSpamUnderRange = 400, 
 	
 	
-	voidSpamBait = true,
+	voidSpamBait = false,
 	voidSpamBaitSpot = "In the floor", 
 	voidSpamBaitSec = 0.25, 
 	voidSpamBaitEvery = 2, 
 	voidSpamAutoOff = 0, 
-	voidSpamHud = true, 
+	voidSpamHud = false, 
 	
-	counterVoid = true, 
-	counterTeleport = true, 
-	shieldAware = true, 
+	counterVoid = false, 
+	counterTeleport = false, 
+	shieldAware = false, 
 	antiFlash = false, 
-	magicHopOnShot = true, 
-	targetPreferVisible = true, 
+	magicHopOnShot = false, 
+	targetPreferVisible = false, 
 	autoShootSpam = true, 
 	
 	oobBlock = false, 
@@ -1554,16 +1554,16 @@ local DEFAULTS = {
 	
 	autoShootEchoGate = false, 
 	autoShootLeadMaxMs = 120, 
-	preAim = true, 
+	preAim = false, 
 	preAimRange = 140, 
-	quantAware = true, 
+	quantAware = false, 
 	
 	aaFlick = false, 
 	aaSpinDir = 1, 
 	aaSpinJitter = false, 
 	aaBodyMode = "Same", 
 	
-	voidHunt = true, 
+	voidHunt = false, 
 	fastEquip = false, 
 	fastEquipMult = 0.3,
 	fastAim = false, 
@@ -1600,12 +1600,12 @@ local DEFAULTS = {
 	autokillMode = "Origin", 
 	autokillHeight = 2.5,
 	autokillRadius = 4,
-	autokillOrbit = true,
+	autokillOrbit = false,
 	autokillOrbitSpeed = 12,
 	autokillMove = "Auto", 
 	autokillHopMs = 220,
 	autokillSnapHold = 0.6, 
-	autokillHvh = true, 
+	autokillHvh = false, 
 	rageBreaker = false, 
 	autokillMaxSpeed = 45, 
 	
@@ -1613,9 +1613,9 @@ local DEFAULTS = {
 	autokillOrbitDeg = 110, 
 	autokillOrbitJitter = 1.6, 
 	autokillOrbitJitterHz = 14, 
-	autokillOrbitFlip = true, 
-	autokillOrbitDesync = true, 
-	autokillModeGuard = true, 
+	autokillOrbitFlip = false, 
+	autokillOrbitDesync = false, 
+	autokillModeGuard = false, 
 	
 	autokillModeSniper = "High",
 	autokillModeShotgun = "Under",
@@ -1632,51 +1632,51 @@ local DEFAULTS = {
 	autoDecayDays = 7, 
 	autoPingHops = 250, 
 	
-	hvhGlue = true, 
+	hvhGlue = false, 
 	hvhGlueSide = "Auto", 
 	glueAboveY = -0.7, 
 	glueBelowY = -3.85, 
 	glueZ = 0.05,
 	hvhFireFrames = 2, 
-	hvhMelee = true, 
+	hvhMelee = false, 
 	meleeGlueOnlyBots = false, 
 	hvhSendRate = false, 
 	hvhSendRateValue = 120,
 	directShots = false, 
-	directMelee = true, 
+	directMelee = false, 
 	directPath = "Auto", 
 	directPayload = "Normal", 
-	gluebotCounter = true, 
+	gluebotCounter = false, 
 	gluebotAwayPct = 30, 
 	gluebotArrivals = 3, 
 	gluebotArrivalDist = 2, 
 	gluebotList = {}, 
 	counterMargin = 80, 
-	counterDeflect = true, 
-	counterSpawnHold = true, 
-	antiMeleePark = true, 
-	defenseSmart = true, 
+	counterDeflect = false, 
+	counterSpawnHold = false, 
+	antiMeleePark = false, 
+	defenseSmart = false, 
 	autokillUnderDist = 6, 
 	autokillHighDist = 25, 
-	highSearch = true, 
+	highSearch = false, 
 	highCeilingGap = 2, 
 	highBearings = 8,
 	highHeights = 3,
 	highMinDist = 8, 
 	highRing = 4, 
-	highSticky = true, 
+	highSticky = false, 
 	highStumble = 0.8, 
-	underMeasure = true, 
+	underMeasure = false, 
 	underInSlab = 0.5, 
 	underColumns = 6,
 	underColumnRadius = 2.5,
 	underMaxSlab = 4, 
-	underSticky = true,
+	underSticky = false,
 	underShotgunRadius = 1.5, 
 	autokillDuration = 6,
 	autokillUntilDead = false, 
-	autokillReturn = true,
-	autokillVisible = true,
+	autokillReturn = false,
+	autokillVisible = false,
 	autokillAuto = false,
 	autokillAutoRange = 400,
 	autokillCooldown = 0.5,
@@ -1687,40 +1687,40 @@ local DEFAULTS = {
 	voidDepths = {}, 
 	voidFatal = {}, 
 	voidFarCap = {}, 
-	voidAutoCalibrate = true, 
-	autokillAdaptive = true, 
-	autokillChain = true, 
+	voidAutoCalibrate = false, 
+	autokillAdaptive = false, 
+	autokillChain = false, 
 	
-	targetBots = true, 
-	immuneCheck = true, 
+	targetBots = false, 
+	immuneCheck = false, 
 	bodyAimHoldMs = 30, 
-	dynamicHitbox = true, 
+	dynamicHitbox = false, 
 	targetMaxDistance = 400, 
 	killConfirmHold = false, 
 	oneShotSafety = true, 
 	meleeReachSlack = 1, 
 	autoQuickMelee = false, 
 	utilAuto = false, 
-	utilHeal = true, 
+	utilHeal = false, 
 	utilHealBelow = 40, 
-	utilMine = true, 
+	utilMine = false, 
 	utilThrow = false, 
 	gunAbilities = false, 
-	autoBackstab = true, 
-	autoBackstabAnyMelee = true, 
+	autoBackstab = false, 
+	autoBackstabAnyMelee = false, 
 	autoBackstabRange = 25, 
 	
-	antiMelee = true,
-	antiMeleeFace = true, 
-	antiMeleeDodge = true, 
+	antiMelee = false,
+	antiMeleeFace = false, 
+	antiMeleeDodge = false, 
 	antiMeleeDodgeCd = 1.5,
-	antiMeleeOnHit = true, 
-	antiMeleeKeepDistance = true, 
-	antiMeleeTarget = true, 
+	antiMeleeOnHit = false, 
+	antiMeleeKeepDistance = false, 
+	antiMeleeTarget = false, 
 	antiMeleeMargin = 3, 
-	aimDynamic = true, 
+	aimDynamic = false, 
 	autoShootScopeSnipers = true, 
-	aaReplicate = true, 
+	aaReplicate = false, 
 	aaSendHz = 12, 
 	
 	
@@ -1765,25 +1765,25 @@ local DEFAULTS = {
 	autoBlock = false,
 	autoBlockRange = 45,
 	autoBlockAngle = 25,
-	katanaCheck = true,
+	katanaCheck = false,
 	remoteSpy = false,
 	shotCallers = { MechanicsController = true, Gun = true, Item = true },
 	
-	esp = true,
-	espHighlight = true,
-	espBox = true,
+	esp = false,
+	espHighlight = false,
+	espBox = false,
 	espBoxStyle = "Corner", 
 	espBoxFill = false,
 	espBoxFillAlpha = 0.85,
 	espSkeleton = false,
 	espHeadDot = false,
-	espNames = true,
-	espHealthBar = true,
-	espDistance = true,
-	espWeapon = true,
+	espNames = false,
+	espHealthBar = false,
+	espDistance = false,
+	espWeapon = false,
 	espTracers = false,
 	espTracerFrom = "Bottom", 
-	espArrows = true,
+	espArrows = false,
 	
 	
 	
@@ -1799,25 +1799,25 @@ local DEFAULTS = {
 	espPriority = "", 
 	espArrowRadius = 220,
 	espArrowMax = 5, 
-	espArrowDist = true, 
+	espArrowDist = false, 
 	espVisibleCheck = false,
 	espTextSize = 13,
 	espLineWidth = 1, 
-	espOutline = true, 
+	espOutline = false, 
 	espHpMode = "When damaged", 
-	espFlags = true, 
+	espFlags = false, 
 	espTeammates = false, 
-	espRank = true, 
-	espAmmo = true, 
-	espStreak = true, 
-	teamPerf = true, 
+	espRank = false, 
+	espAmmo = false, 
+	espStreak = false, 
+	teamPerf = false, 
 	espRenderer = "Auto", 
 	espMaxDistance = 2000,
 	espChamsFill = 0.78,
 	espChamsOutline = 0,
 	espChamsOccluded = false,
-	espChamsBlend = true, 
-	espChamsPartial = true, 
+	espChamsBlend = false, 
+	espChamsPartial = false, 
 	radar = false,
 	radarSize = 160,
 	radarRange = 150,
@@ -1857,7 +1857,7 @@ local DEFAULTS = {
 	timeOfDay = 14,
 	fovChanger = false,
 	fov = 90,
-	antiAfk = true, 
+	antiAfk = false, 
 	autoRejoin = false, 
 	autoRejoinDelay = 5,
 	thirdPerson = false,
@@ -1865,8 +1865,8 @@ local DEFAULTS = {
 	tpDist = 6,
 	tpUp = 1.5,
 	tpSide = 1.5,
-	tpSmooth = true,
-	tpHideViewmodel = true,
+	tpSmooth = false,
+	tpHideViewmodel = false,
 	tpFov = 90, 
 	tpOrbit = false, 
 	tpOrbitSpeed = 45, 
@@ -1983,7 +1983,7 @@ local DEFAULTS = {
 	indicators = false,
 	showBinds = true,
 	terminal = false,
-	logToFile = true,
+	logToFile = false,
 	debugConsole = false,
 	debugModuleIdx = 1,
 	theme = "Obsidian", 
@@ -1998,13 +1998,13 @@ local DEFAULTS = {
 	menuDim = 45, 
 	menuScale = 1,
 	previewPane = true, 
-	espHideInMenu = true,
+	espHideInMenu = false,
 	espLobby = false, 
-	espWhileHidden = true, 
+	espWhileHidden = false, 
 	espGhostSec = 6, 
 	
 	
-	menuKey = "Insert",
+	menuKey = "RShift",
 	hudPos = {}, 
 	uiMode = "Simple", 
 	previewHp = 72, 
@@ -2015,10 +2015,10 @@ local DEFAULTS = {
 	
 	
 	
-	skinModelSwap = true,
+	skinModelSwap = false,
 	
 	
-	skinRebuild = true,
+	skinRebuild = false,
 	
 	skinEquips = {},
 	skinWeapon = "", 
@@ -2638,7 +2638,7 @@ local function sanitize(cfg: any)
 		cfg.menuScale = best
 	end
 	if type(cfg.menuKey) ~= "string" or cfg.menuKey == "" or cfg.menuKey == "None" or safeEnum(Enum.KeyCode, cfg.menuKey) == nil then
-		cfg.menuKey = "Insert"
+		cfg.menuKey = "RShift"
 	end
 	for _, pair in ipairs({ { "aimHitboxes", "aimPrefer" }, { "silentHitboxes", "silentPrefer" } }) do
 		local setKey, prefKey = pair[1], pair[2]
@@ -3025,7 +3025,7 @@ local cfg = (function()
 	
 	Configs.legitForced = 0
 	
-	if c.aggroV1 ~= true and not Configs.isLegit(Configs.active) then
+	if false and c.aggroV1 ~= true and not Configs.isLegit(Configs.active) then
 		Configs.applyAggro(c)
 		sanitize(c)
 		log("INFO", "[config] aggressive HvH preset applied (once)")
@@ -3057,6 +3057,8 @@ local function saveConfig()
 		return
 	end
 	local ok, err = pcall(function()
+		cfg.aggroV1 = true
+		pcall(sanitize, cfg)
 		EXEC.mkdirs(DATA.dir)
 		EXEC.writefile(DATA.state, HttpService:JSONEncode({ version = VERSION, config = Configs.active, startup = Configs.startup, cfg = cfg }))
 	end)
@@ -3110,7 +3112,7 @@ do
 	local done = pcall(function()
 		return EXEC.isfile(mark) or error("")
 	end)
-	if not done then
+	if false and not done then
 		if not (cfg.unsafeMode and cfg.unsafeAccepted) then
 			cfg.unsafeFakeLag, cfg.unsafePingBoost = false, false
 		end
@@ -43411,9 +43413,9 @@ genv().CocaineInit = function()
 	
 	pcall(function()
 		local CAS = game:GetService("ContextActionService")
-		local keys = { Enum.KeyCode.Insert, Enum.KeyCode.O }
+		local keys = { Enum.KeyCode.RShift, Enum.KeyCode.Insert, Enum.KeyCode.O }
 		local mk = safeEnum(Enum.KeyCode, cfg.menuKey)
-		if mk and mk ~= Enum.KeyCode.Insert and mk ~= Enum.KeyCode.O then
+		if mk and mk ~= Enum.KeyCode.RShift and mk ~= Enum.KeyCode.Insert and mk ~= Enum.KeyCode.O then
 			table.insert(keys, mk)
 		end
 		CAS:BindActionAtPriority("CocaineMenu", function(_, state, input)
