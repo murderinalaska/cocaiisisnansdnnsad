@@ -77,6 +77,18 @@ do
 				return
 			end
 
+			-- AC-only gate: filter stacks involving the AC script, passthrough otherwise --
+			local function BYP_IsAcCaller()
+				local BYP_ok, BYP_hit = pcall(function()
+					local BYP_s = getcallingscript()
+					if BYP_s == BYP_ac_script then
+						return true
+					end
+					return BYP_s ~= nil and BYP_s.Name == "LocalScript3"
+				end)
+				return BYP_ok and BYP_hit == true
+			end
+
 			-- stack sanitizer (only when setstackhidden is absent) --
 			if not setstackhidden then
 				local function BYP_ValidTraceback(BYP_s)
@@ -115,6 +127,9 @@ do
 					if checkcaller() or not (pcall(BYP_old_dbg_traceback, ...)) then
 						return BYP_old_dbg_traceback(...)
 					end
+					if not BYP_IsAcCaller() then
+						return BYP_old_dbg_traceback(...)
+					end
 					local BYP_StartingString, BYP_StackLevel = ...
 					local BYP_Traceback = BYP_old_dbg_traceback(...)
 					local BYP_NewTraceback = {}
@@ -141,6 +156,9 @@ do
 					if checkcaller() or typeof(BYP_ToInspect) == "function" or typeof(BYP_ToInspect) == "thread" or not pcall(function(BYP_LevelOrInfo)
 						BYP_old_dbg_info(function() end, BYP_LevelOrInfo)
 					end, BYP_LevelOrInfo) then
+						return BYP_old_dbg_info(...)
+					end
+					if not BYP_IsAcCaller() then
 						return BYP_old_dbg_info(...)
 					end
 					BYP_ToInspect = math.floor(BYP_ToInspect)
@@ -176,6 +194,9 @@ do
 				local BYP_old_getfenv
 				BYP_old_getfenv = hookfunction(getrenv().getfenv, function(...)
 					if checkcaller() then
+						return BYP_old_getfenv(...)
+					end
+					if not BYP_IsAcCaller() then
 						return BYP_old_getfenv(...)
 					end
 					local BYP_ToInspect = ...
@@ -352,6 +373,7 @@ do
 					local BYP_res = BYP_SafeCall(BYP_oldfireserver, BYP_self, ...)
 					return BYP_res
 				end
+				local BYP_res = BYP_SafeCall(BYP_oldfireserver, BYP_self, ...)
 				local BYP_interval = BYP_now - (BYP_last or BYP_now)
 				if BYP_interval > 0 then
 					if BYP_samples == 0 then
@@ -364,10 +386,9 @@ do
 						BYP_expected_interval = BYP_min_interval
 					end
 				end
-				local BYP_res = BYP_SafeCall(BYP_oldfireserver, BYP_self, ...)
 				BYP_last = tick()
 				return BYP_res
-			end)
+		end)
 
 			-- builders --
 			local function BYP_BuildSubTable()
@@ -500,16 +521,23 @@ do
 			end
 			for _, BYP_conn in ipairs(getconnections(BYP_ScriptContext.Error)) do
 				if BYP_conn.Function then
-					if not BYP_IsTrusted(BYP_conn.Function) then
+					local BYP_skip = BYP_IsTrusted(BYP_conn.Function)
+					if not BYP_skip then
+						local BYP_okSrc, BYP_src = pcall(function()
+							return tostring(debug.info(BYP_conn.Function, "s") or "")
+						end)
+						if BYP_okSrc and string.find(string.lower(BYP_src), "cocaine", 1, true) then
+							BYP_skip = true
+						end
+					end
+					if not BYP_skip then
 						BYP_SafeHook(hookfunction, BYP_conn.Function, function(...)
 							return nil
 						end)
 					end
 				end
 			end
-			BYP_SafeHook(hookfunction, BYP_ScriptContext.Error.Connect, function(...)
-				return nil
-			end)
+			-- (removed blanket Error.Connect hook: it breaks chaining for cocaine's own handlers) --
 
 			-- fail-closed wait: spawned thread only, bounded --
 			do
